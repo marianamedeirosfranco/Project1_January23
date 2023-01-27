@@ -50,7 +50,7 @@ class Spaceship{
 }
 
 class Debris {
-    constructor(x, y, w, h, h, color, ctx){
+    constructor(x, y, w, h, color, ctx){
         this.x = x
         this.y = y
         this.w = w
