@@ -1,7 +1,7 @@
 /** @type {HTMLCanvasElement} */
 
-class Spaceship { // Do we need Image here in the constructor?
-    constructor (x, y, w, h, /* image */ ctx) {
+class Spaceship{ 
+    constructor(x, y, w, h, ctx){
         this.x = x
         this.y = y
         this.w = w
@@ -12,14 +12,37 @@ class Spaceship { // Do we need Image here in the constructor?
         this.speedY = 0
         this.image = new Image()
         this.image.src = ""
-        
+    }
 
+    draw(){
+        this.ctx.drawImage(this.image, this.x, this.y, this.w, this.h)
+    }
+
+    newPosition(){
+         this.x += this.speedX
+         this.y += this.speedY
+    }
+
+    top(){
+        return this.y
+    }
+
+    bottom (){
+        return this.y + this.h
+    }
+
+    left (){
+        return this.x
+    }
+    
+    right (){
+        return this.x + this.w
     }
 
 
 
 }
 
-class Debris {
+/* class Debris {
 
-}
+} */

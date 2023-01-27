@@ -21,7 +21,8 @@ startButton.onclick = function () {
 
 document.addEventListener("keydown", (e) => {
 // DO WE NEED TO LIMIT CANVAS MOVEMENT WITH IF STATEMENTS?
-    switch (e.code){ 
+// How many if statements to limit movement
+    switch(e.code){ 
         case "ArrowUp":
             player.speedY -= 1
             break
@@ -37,9 +38,9 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
-document.addEventListener ("keyup", (e) => {
+document.addEventListener("keyup", (e) => {
     // DO ALL KEY CASES ALLOW FOR PLAYER TO KEEP MOVING?
-    switch (e.code){
+    switch(e.code){
         case "ArrowUp":
             player.speedY = 0
             break
