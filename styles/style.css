@@ -1,11 +1,30 @@
 /* Space Racer 2023 CSS */
 
-.logo-img{
-    background-image: url('/docs/assets/NASA_logo.svg.png');
-
+body{
+    padding: 0;
+    text-align: center;
+    font-family: 'Press Start 2P';
+    font-size: 13px;
 }
 
-#canvas {
-    float: center;
-    padding: 20px 0px;
+#game-div{
+    float: left;
+}
+
+#logo-img{
+    width: 30%;
+}
+
+#start-button{
+    font-size: 30px;
+    background-color: #0B3D91;
+    color: white;
+    padding: 20px 40px;
+    border: 0;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+
+#game{
+    float: left;
 }
