@@ -5,7 +5,7 @@ const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
 //Create player (INCOMPLETE)
-const player = new Spaceship(/* 0, 0, 0, 0, "Image", ctx*/) // Spaceship Class not finished
+const player = new Spaceship(/* (canvas.width / 2) - (player.width / 2), 0, 0, 0, "Image", ctx*/) // Spaceship Class not finished
 
 // Grab the button & Start game (INCOMPLETE)
 const startButton = document.getElementById("start-button")
