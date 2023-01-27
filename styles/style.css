@@ -47,6 +47,18 @@ body{
     height: 80px;
     background-color: #0B3D91;
     color: white;
-    border: 0;
-    border-radius: 40px;
+    border-radius: 30px;
+    border: 8px ridge #0B3D91;
+    box-shadow: 0 8px #999;
+}
+
+#start-button:hover{
+    background-color: #062652;
+    border: 8px ridge #062652;
+}
+
+#start-button:active {
+    background-color: #062652;
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
 }

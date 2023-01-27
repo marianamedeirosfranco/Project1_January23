@@ -1,5 +1,7 @@
 /** @type {HTMLCanvasElement} */
 
+//Player:
+
 class Spaceship{ 
     constructor(x, y, w, h, ctx){
         this.x = x
@@ -48,6 +50,8 @@ class Spaceship{
         )
     }
 }
+
+//Debris:
 
 class Debris {
     constructor(x, y, w, h, color, ctx){

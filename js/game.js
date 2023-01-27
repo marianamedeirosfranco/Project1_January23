@@ -33,9 +33,10 @@ class Game{
         clearInterval(this.intervalId)
     }
 
-   /*  clear(){
-
-    } */
+    clear(){
+        this.backgroundImage.src = "../docs/assets/space.jpeg"
+        this.ctx.drawImage(this.backgroundImage, 0, 0, )
+    }
 
     /* updateScore(){
 
