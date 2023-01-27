@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Racer 2023</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
 </head>
 <body>
-    <div>
-        <img id="logo-img"/>
-
-        <button id="start-button">Start Game!</button>
+    <div id="game-div">
+        <img id="logo-img" src="./docs/assets/NASA_logo.svg.png" alt="Gamelogo" >
 
         <p>Use your L + R arrows ArrowKeys to move!</p>
 
-        <img id="key-img"/>
+        <button id="start-button">Start Game!</button>
 
-        <canvas id="canvas" width="400" height="600px" style="border: 8px solid black;"></canvas>
+        <img id="key-img" src="./docs/assets/istockphoto-1200411951-612x612.jpeg" alt="arrowkeysimg">
+
     </div>
 
+    <div id="game">
+        <canvas id="canvas" width="400" height="600px" style="border: 8px solid black;"></canvas>
+    </div>
+    
     <script src="./js/components.js"></script>
     <script src="./js/game.js"></script>
     <script src="./js/main.js"></script>
