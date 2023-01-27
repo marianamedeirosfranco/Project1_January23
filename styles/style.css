@@ -1,5 +1,11 @@
 /* Space Racer 2023 CSS */
 
 .logo-img{
-    background-image: '';
+    background-image: url('/docs/assets/NASA_logo.svg.png');
+
+}
+
+#canvas {
+    float: center;
+    padding: 20px 0px;
 }
