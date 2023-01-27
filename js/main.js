@@ -4,16 +4,15 @@ const canvas = document.getElementById("canvas")
 
 const ctx = canvas.getContext("2d")
 
-// Grab the button
+//Create player (INCOMPLETE)
+const player = new Spaceship(/* 0, 0, 0, 0, "Image", ctx*/) // Spaceship Class not finished
+
+// Grab the button & Start game (INCOMPLETE)
 const startButton = document.getElementById("start-button")
 
-//Create player (INCOMPLETE)
-const player = new Spaceship()
-
-//Start game (INCOMPLETE)
-startButton.onclick = function (){
-    const game = new Game()
-    game.start()
+startButton.onclick = function () {
+    const game = new Game() // Class not defined
+    game.start() // Function not made
 }
 
 //Key Funcionalities 
@@ -21,8 +20,8 @@ startButton.onclick = function (){
 //Keys Down (INCOMPLETE)
 
 document.addEventListener("keydown", (e) => {
-
-    switch (e.code){
+// DO WE NEED TO LIMIT CANVAS MOVEMENT WITH IF STATEMENTS?
+    switch (e.code){ 
         case "ArrowUp":
             player.speedY -= 1
             break
@@ -39,7 +38,7 @@ document.addEventListener("keydown", (e) => {
 })
 
 document.addEventListener ("keyup", (e) => {
-    
+    // DO ALL KEY CASES ALLOW FOR PLAYER TO KEEP MOVING?
     switch (e.code){
         case "ArrowUp":
             player.speedY = 0
