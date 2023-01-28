@@ -20,13 +20,13 @@ class Game{
 
     update = () => {
         this.frames++
-        //this.clear()
-        this.player.draw()
+        this.clear()
         this.player.newPosition()
-        /* this.updateScore()
-        this.drawScore()
-        this.updateEnemies()
-        this.checkGameOver()*/
+        this.player.draw()
+        //this.updateEnemies()
+       // this.checkGameOver()
+       // this.drawScore()
+        //this.updateScore()
     }
 
     stop(){
@@ -34,8 +34,8 @@ class Game{
     }
 
     clear(){
-        this.backgroundImage.src = "../docs/assets/space.jpeg"
-        this.ctx.drawImage(this.backgroundImage, 0, 0, )
+        this.backgroundImage.src = "../docs/assets/space-background.jpeg"
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.width, this.height)
     }
 
     /* updateScore(){

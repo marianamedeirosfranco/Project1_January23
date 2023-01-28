@@ -5,15 +5,15 @@ const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
 //Create player (INCOMPLETE)
-const player = new Spaceship((canvas.width / 2) - (player.width / 2), 200, 100, 50, /* "Image", */ ctx) 
+const player = new Spaceship(200, 200, 100, 50,  ctx) 
 
 
 // Grab the button & Start game (INCOMPLETE)
 const startButton = document.getElementById("start-button")
 
 startButton.onclick = function () {
-    const game = new Game() // Class not defined
-    game.start() // Function not made
+    const game = new Game(ctx, 400, 600, player)
+    game.start()
 }
 
 

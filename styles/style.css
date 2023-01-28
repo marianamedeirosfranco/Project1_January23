@@ -1,4 +1,4 @@
-/* Space Racer 2023 CSS */
+/* Space Game 2023 CSS */
 
 body{
     padding: 0;
@@ -13,13 +13,13 @@ body{
 }
 
 #menuDiv{
-    margin: 30px;
-    width: 500px;
+    margin: 40px 0px 40px 0px;
+    width: 550px;
 }
 
 #canvasDiv{
-    margin: 30px;
-    width: 400px;
+    margin: 40px 0px 40px 0px;
+    width: 700px;
 }
 
 #keysDiv{
@@ -29,15 +29,15 @@ body{
 }
 
 #keysDiv img{
-    margin: 40px;
+    margin: 30px;
 }
 
 #logo-img{
-    width: 50%;
+    width: 250px;
 }
 
 #key-img{
-    width: 200px;
+    width: 110px;
 }
 
 #start-button{
@@ -47,7 +47,7 @@ body{
     height: 80px;
     background-color: #0B3D91;
     color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     border: 8px ridge #0B3D91;
     box-shadow: 0 8px #999;
 }
@@ -59,6 +59,6 @@ body{
 
 #start-button:active {
     background-color: #062652;
-    box-shadow: 0 4px #666;
+    box-shadow: 0 3px #666;
     transform: translateY(4px);
 }
