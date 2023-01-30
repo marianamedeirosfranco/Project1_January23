@@ -10,7 +10,7 @@ class Spaceship{
         this.speedX = 0
         this.speedY = 0
         this.image = new Image()
-        this.image.src = "/docs/assets/red-white-rocket-cropped-removebg-preview.png"
+        this.image.src = "/docs/assets/alien-ship-removebg-corp.png"
     }
 
     draw(){
@@ -18,6 +18,8 @@ class Spaceship{
     }
 
     newPosition(){
+
+      //If statments impead canvass crossing glitch
       this.x += this.speedX
       this.y += this.speedY
     }

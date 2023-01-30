@@ -16,6 +16,7 @@ class Game{
 
     start(){
         this.intervalId = setInterval(this.update, 1000 / 60)
+
     }
 
     update = () => {
@@ -50,11 +51,11 @@ class Game{
 
     updateEnemies(){
         for (let i = 0; i < this.enemies.length; i++) {
-            this.enemies[i].y += 1;
+            this.enemies[i].y += 3;
             this.enemies[i].draw();
           }
       
-          if (this.frames % 20 === 0) {
+          if (this.frames % 10 === 0) {
          /*    let randomSize = Math.floor(Math.random() * (250 - 100) + 100); */
       
             let randomX = Math.floor(Math.random() * (400 - 1) + 1);
@@ -68,11 +69,12 @@ class Game{
             return this.player.crashWith(enemy)
         })
         if (collision) {
-            ctx.font = "32px Roboto";
-            ctx.fillStyle = "white";
-            ctx.fillText(`YOU'RE TRASH`, 80, 250);
-            ctx.fillStyle = "white";
-            ctx.fillText(`Your final score is ${this.score}`, 65, 300);
+            ctx.font = "45px Roboto";
+            ctx.fillStyle = "yellow";
+            ctx.fillText(`YOU'RE TRASH`, 35, 250);
+            ctx.font = "25px Roboto";
+            ctx.fillStyle = "yellow";
+            ctx.fillText(`Your final score is ${this.score}`, 90, 340);
             this.stop();
         }
      }
