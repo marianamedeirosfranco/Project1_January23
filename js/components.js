@@ -37,22 +37,32 @@ class Spaceship{
     right (){
         return this.x + this.w
     }
+
+    crashWith(Debris) {
+      return !(
+        this.bottom() < Debris.top() ||
+        this.top() > Debris.bottom() ||
+        this.right() < Debris.left() ||
+        this.left() > Debris.right()
+      );
+    }
 }
 
 class Debris {
-    constructor(x, y, w, h, ctx) {
+    constructor(x, y, w, h, color, ctx) {
       this.x = x
       this.y = y
       this.w = w
       this.h = h
+      this.color = color
       this.ctx=ctx
-      this.image = new Image()
-      this.image.src = "/docs/assets/enemy1.png"
+ /*      this.image = new Image()
+      this.image.src = "/docs/assets/enemy1.png" */
       this.speedX = 0;
       this.speedY = 0;
 }
 draw(){
-    this.ctx.drawImage(this.image, this.x, this.y, this.w, this.h)
+    this.ctx.fillRect(this.x, this.y, this.w, this.h, this.color, this.ctx)
 }
 
 newPosition() {

@@ -23,10 +23,10 @@ class Game{
         this.clear()
         this.player.newPosition()
         this.player.draw()
-        //this.updateEnemies()
+        this.updateEnemies()
        // this.checkGameOver()
-       // this.drawScore()
-        //this.updateScore()
+        this.drawScore()
+        this.updateScore()
     }
 
     stop(){
@@ -38,19 +38,42 @@ class Game{
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.width, this.height)
     }
 
-    /* updateScore(){
+    updateScore(){
+        if(this.player.y === 0) this.score++
+    }
 
-    } */
+    drawScore(){
+        ctx.font = "15px Helvetica";
+        ctx.fillStyle = "white";
+        ctx.fillText(`Score: ${this.score}`, 5, 25);
+    }
 
-    /* drawScore(){
+    updateEnemies(){
+        for (let i = 0; i < this.enemies.length; i++) {
+            this.enemies[i].y += 1;
+            this.enemies[i].draw();
+          }
+      
+          if (this.frames % 200 === 0) {
+            let randomSize = Math.floor(Math.random() * (250 - 100) + 100);
+      
+            let randomX = Math.floor(Math.random() * (200 - 100) + 100);
+      
+            this.enemies.push(new Debris(randomX, 0, randomSize, 30, "red", this.ctx));
+          }        
+    }
 
-    } */
-
-   /*  updateEnemies(){
-
-    } */
-
-   /*  checkGameOver(){
-
-    } */
+   checkGameOver(){
+        const collision = this.enemies.some((enemy) => {
+            return this.player.crashWith(enemy)
+        })
+        if(collision){
+            this.ctx.fillRec(50, 50, 150, 230)
+            this.ctx.fillStyle = "black"
+            this.ctx.font = "20px Press Start 2P"
+            this.ctx.fillStyle = "white"
+            this.ctx.fillText = ("GAME OVER", 50, 50)
+            this.stop()
+        }
+    } 
 }
