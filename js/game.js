@@ -16,7 +16,6 @@ class Game{
 
     start(){
         this.intervalId = setInterval(this.update, 1000 / 60)
-
     }
 
     update = () => {
@@ -69,13 +68,16 @@ class Game{
             return this.player.crashWith(enemy)
         })
         if (collision) {
-            ctx.font = "45px Roboto";
-            ctx.fillStyle = "yellow";
-            ctx.fillText(`YOU'RE TRASH`, 35, 250);
-            ctx.font = "25px Roboto";
-            ctx.fillStyle = "yellow";
-            ctx.fillText(`Your final score is ${this.score}`, 90, 340);
-            this.stop();
+            ctx.font = "45px Roboto"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`YOU'RE TRASH`, 35, 250)
+            ctx.font = "25px Roboto"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`Your final score is ${this.score}`, 90, 340)
+            this.stop()
+            music.pause()
+            const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+            failSound.play()
         }
      }
 }

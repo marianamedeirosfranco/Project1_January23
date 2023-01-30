@@ -5,7 +5,7 @@ const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
 //Creat soundtrack
-const music = new Audio("../docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-1080p-1655123583322.mp4")
+const music = new Audio("../docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
 
 //Create player 
 const player = new Spaceship(177, 550, 20, 40, ctx) 
