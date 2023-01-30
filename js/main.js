@@ -71,3 +71,4 @@ document.addEventListener("keyup", (e) => {
     }
 })
 
+console.log("ola")
