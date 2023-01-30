@@ -25,9 +25,9 @@ document.addEventListener("keydown", (e) => {
 // How many if statements to limit movement
     switch(e.code){ 
         case "ArrowUp":
-            //if(player.y > 1){
+            if(player.y > 1){
             player.speedY = -3
-       // }
+       }
             break
         case "ArrowDown":
            // if(player.y<canvas.height){
@@ -35,9 +35,11 @@ document.addEventListener("keydown", (e) => {
         //}
             break
         case "ArrowLeft":
-          //  if(player.x>0){
-            player.speedX = -3
-        //}
+          if(player.x>0){
+            player.speedX = -4
+        } else {
+            player.speedX = 0
+        }
             break
         case "ArrowRight":
            if(!player.x === canvas.width){
