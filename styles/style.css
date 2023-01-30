@@ -40,6 +40,10 @@ body{
     width: 110px;
 }
 
+.useArrowKeys{
+    margin-top: 50px;
+}
+
 #start-button{
     font-size: 20px;
     font-family: 'Press Start 2P';
