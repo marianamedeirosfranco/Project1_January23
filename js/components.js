@@ -3,22 +3,19 @@
 //Player:
 
 class Spaceship{ 
-    constructor(x, y, w, h, /* color, */ ctx){
+    constructor(x, y, w, h, ctx){
         this.x = x
         this.y = y
         this.w = w
         this.h = h
-        //this.color = color//Do we need color here?
         this.ctx = ctx
         this.speedX = 0
         this.speedY = 0
-       /*  this.img = new Image()
-        this.img.src = "../docs/assets/space-ship.png" */
+        this.img = new Image()
+        this.img.src = "../docs/assets/space-ship.png"
     }
 
     draw(){
-        this.img = new Image()
-        this.img.src = "../docs/assets/space-ship.png"
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 

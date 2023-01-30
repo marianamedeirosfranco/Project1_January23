@@ -16,7 +16,6 @@ startButton.onclick = function () {
     game.start()
 }
 
-
 //Key Funcionalities 
 
 //Keys Down (INCOMPLETE)
