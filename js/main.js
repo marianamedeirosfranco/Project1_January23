@@ -70,5 +70,3 @@ document.addEventListener("keyup", (e) => {
             break 
     }
 })
-
-console.log("ola")
