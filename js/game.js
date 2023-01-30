@@ -68,7 +68,7 @@ class Game{
             return this.player.crashWith(enemy)
         })
         if (collision) {
-            ctx.font = "32px Helvetica";
+            ctx.font = "32px Roboto";
             ctx.fillStyle = "white";
             ctx.fillText(`GAME OVER`, 100, 200);
             ctx.fillStyle = "white";

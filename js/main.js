@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas")
 
 const ctx = canvas.getContext("2d")
 
-//Create player
+//Create player 
 const player = new Spaceship(177, 550, 46, 50, ctx) 
 
 
