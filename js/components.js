@@ -73,3 +73,4 @@ newPosition() {
     return this.x + this.w;
   }
 }
+
