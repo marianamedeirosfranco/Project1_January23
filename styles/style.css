@@ -46,6 +46,10 @@ body{
     margin-top: 50px;
 }
 
+#buttonDiv{
+    display: flex
+}
+
 #start-button{
     font-size: 20px;
     font-family: 'Press Start 2P';
@@ -65,6 +69,29 @@ body{
 
 #start-button:active {
     background-color: #062652;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+#restart-button{
+    font-size: 20px;
+    font-family: 'Press Start 2P';
+    width: 300px;
+    height: 80px;
+    background-color: #b7410e;
+    color: white;
+    border-radius: 20px;
+    border: 8px ridge #b7410e;
+    box-shadow: 0 8px #999;
+}
+
+#restart-button:hover{
+    background-color: #b7410ecb;
+    border: 8px ridge #b7410ecb;
+}
+
+#restart-button:active {
+    background-color: #b7410ecb;
     box-shadow: 0 3px #666;
     transform: translateY(4px);
 }

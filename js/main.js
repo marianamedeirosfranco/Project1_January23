@@ -18,6 +18,8 @@ startButton.onclick = function () {
     const game = new Game(ctx, canvas.width, canvas.height, player)
     game.start()
     music.play()
+    document.getElementById("start-button").style.visibility = 'hidden'
+    document.getElementById("restart-button").style.visibility = 'visible'
 }
 
 //Key Funcionalities 
@@ -25,10 +27,10 @@ startButton.onclick = function () {
 document.addEventListener("keydown", (e) => {
     switch(e.code){ 
         case "ArrowUp":
-            if(player.y > 10){
+            if(player.y > 15){
             player.speedY = -4
              }else{
-                player.y = 10
+                player.y = 15
                 player.speedY = 0
              }
               break

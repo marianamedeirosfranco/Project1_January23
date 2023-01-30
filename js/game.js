@@ -54,7 +54,7 @@ class Game{
             this.enemies[i].draw();
           }
       
-          if (this.frames % 10 === 0) {
+          if (this.frames % 7 === 0) {
          /*    let randomSize = Math.floor(Math.random() * (250 - 100) + 100); */
       
             let randomX = Math.floor(Math.random() * (400 - 1) + 1);
@@ -68,9 +68,9 @@ class Game{
             return this.player.crashWith(enemy)
         })
         if (collision) {
-            ctx.font = "45px Roboto"
+            ctx.font = "50px Roboto"
             ctx.fillStyle = "yellow"
-            ctx.fillText(`YOU'RE TRASH`, 35, 250)
+            ctx.fillText(`YOU'RE TRASH`, 20, 250)
             ctx.font = "25px Roboto"
             ctx.fillStyle = "yellow"
             ctx.fillText(`Your final score is ${this.score}`, 90, 340)
