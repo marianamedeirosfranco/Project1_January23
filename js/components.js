@@ -10,7 +10,7 @@ class Spaceship{
         this.speedX = 0
         this.speedY = 0
         this.image = new Image()
-        this.image.src = "/docs/assets/space-ship-removebg-preview.png"
+        this.image.src = "/docs/assets/red-white-rocket-cropped-removebg-preview.png"
     }
 
     draw(){
@@ -18,8 +18,8 @@ class Spaceship{
     }
 
     newPosition(){
-         this.x += this.speedX
-         this.y += this.speedY
+      this.x += this.speedX
+      this.y += this.speedY
     }
 
     top(){
@@ -41,15 +41,15 @@ class Spaceship{
 
 class Debris {
     constructor(x, y, w, h, ctx) {
-        this.x = x
-        this.y = y
-        this.w = w
-        this.h = h
-        this.ctx=ctx
-        this.image = new Image()
-        this.image.src = "/docs/assets/enemy1.png"
-        this.speedX = 0;
-        this.speedY = 0;
+      this.x = x
+      this.y = y
+      this.w = w
+      this.h = h
+      this.ctx=ctx
+      this.image = new Image()
+      this.image.src = "/docs/assets/enemy1.png"
+      this.speedX = 0;
+      this.speedY = 0;
 }
 draw(){
     this.ctx.drawImage(this.image, this.x, this.y, this.w, this.h)
