@@ -5,7 +5,7 @@ const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
 //Create player (INCOMPLETE)
-const player = new Spaceship(150, 550, 90, 40, ctx) 
+const player = new Spaceship(177, 550, 46, 50, ctx) 
 
 
 // Grab the button & Start game (INCOMPLETE)
@@ -25,25 +25,36 @@ document.addEventListener("keydown", (e) => {
 // How many if statements to limit movement
     switch(e.code){ 
         case "ArrowUp":
-            //if(player.y > 1){
-            player.speedY = -3
-       // }
-            break
+            if(player.y > 0){
+            player.speedY = -5
+             }else{
+                player.y = 0
+                player.speedY = 0
+             }
+              break
         case "ArrowDown":
-           // if(player.y<canvas.height){
-            player.speedY = 3
-        //}
+            if(player.y < 554){
+            player.speedY = 5
+            }else{
+                player.y = 554
+                player.speedY = 0
+            }
             break
         case "ArrowLeft":
-          //  if(player.x>0){
-            player.speedX = -3
-        //}
-            break
+            if (player.x > 0){
+            player.speedX = -5
+            } else{
+                player.x = 0
+                player.speedX = 0
+            }break
         case "ArrowRight":
-           if(!player.x === canvas.width){
-            player.speedX = 3
-        }
+            if (player.x  <  350){
+                player.speedX = 5
+                } else{
+                    player.x = 350
+                    player.speedX = 0
             break 
+                }
     }
 })
 
