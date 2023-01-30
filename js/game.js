@@ -24,7 +24,7 @@ class Game{
         this.player.newPosition()
         this.player.draw()
         this.updateEnemies()
-       // this.checkGameOver()
+        this.checkGameOver()
         this.drawScore()
         this.updateScore()
     }
@@ -67,13 +67,13 @@ class Game{
         const collision = this.enemies.some((enemy) => {
             return this.player.crashWith(enemy)
         })
-        if(collision){
-            this.ctx.fillRec(50, 50, 150, 230)
-            this.ctx.fillStyle = "black"
-            this.ctx.font = "20px Press Start 2P"
-            this.ctx.fillStyle = "white"
-            this.ctx.fillText = ("GAME OVER", 50, 50)
-            this.stop()
+        if (collision) {
+            ctx.font = "32px Helvetica";
+            ctx.fillStyle = "white";
+            ctx.fillText(`GAME OVER`, 100, 200);
+            ctx.fillStyle = "white";
+            ctx.fillText(`Your final score is ${this.score}`, 60, 250);
+            this.stop();
         }
-    } 
+     }
 }
