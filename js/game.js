@@ -39,11 +39,11 @@ class Game{
     }
 
     updateScore(){
-        if(this.player.y === 0) this.score++
+        if(this.frames % 60 === 0) this.score++
     }
 
     drawScore(){
-        ctx.font = "15px Helvetica";
+        ctx.font = "20px Helvetica";
         ctx.fillStyle = "white";
         ctx.fillText(`Score: ${this.score}`, 5, 25);
     }
@@ -54,12 +54,12 @@ class Game{
             this.enemies[i].draw();
           }
       
-          if (this.frames % 200 === 0) {
-            let randomSize = Math.floor(Math.random() * (250 - 100) + 100);
+          if (this.frames % 20 === 0) {
+         /*    let randomSize = Math.floor(Math.random() * (250 - 100) + 100); */
       
-            let randomX = Math.floor(Math.random() * (200 - 100) + 100);
+            let randomX = Math.floor(Math.random() * (400 - 1) + 1);
       
-            this.enemies.push(new Debris(randomX, 0, randomSize, 30, "red", this.ctx));
+            this.enemies.push(new Debris(randomX, 0, 4, 4, "red", this.ctx));
           }        
     }
 
@@ -70,9 +70,9 @@ class Game{
         if (collision) {
             ctx.font = "32px Roboto";
             ctx.fillStyle = "white";
-            ctx.fillText(`GAME OVER`, 100, 200);
+            ctx.fillText(`YOU'RE TRASH`, 80, 250);
             ctx.fillStyle = "white";
-            ctx.fillText(`Your final score is ${this.score}`, 60, 250);
+            ctx.fillText(`Your final score is ${this.score}`, 65, 300);
             this.stop();
         }
      }

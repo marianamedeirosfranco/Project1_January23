@@ -56,8 +56,6 @@ class Debris {
       this.h = h
       this.color = color
       this.ctx=ctx
- /*      this.image = new Image()
-      this.image.src = "/docs/assets/enemy1.png" */
       this.speedX = 0;
       this.speedY = 0;
 }

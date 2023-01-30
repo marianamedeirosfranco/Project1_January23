@@ -21,8 +21,8 @@ startButton.onclick = function () {
 document.addEventListener("keydown", (e) => {
     switch(e.code){ 
         case "ArrowUp":
-            if(player.y > 0){
-            player.speedY = -6
+            if(player.y > 10){
+            player.speedY = -5
              }else{
                 player.y = 0
                 player.speedY = 0
@@ -30,7 +30,7 @@ document.addEventListener("keydown", (e) => {
               break
         case "ArrowDown":
             if(player.y < 550){
-            player.speedY = 6
+            player.speedY = 5
             }else{
                 player.y = 550
                 player.speedY = 0
@@ -38,14 +38,14 @@ document.addEventListener("keydown", (e) => {
             break
         case "ArrowLeft":
             if (player.x > 0){
-            player.speedX = -6
+            player.speedX = -5
             } else{
                 player.x = 0
                 player.speedX = 0
             }break
         case "ArrowRight":
             if (player.x  <  350){
-                player.speedX = 6
+                player.speedX = 5
                 } else{
                     player.x = 350
                     player.speedX = 0
