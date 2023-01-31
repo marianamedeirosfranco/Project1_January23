@@ -43,23 +43,21 @@ class Game{
     }
 
     drawScore(){
-        ctx.font = "20px Helvetica";
-        ctx.fillStyle = "white";
-        ctx.fillText(`Score: ${this.score}`, 5, 25);
+        ctx.font = "12px 'Press Start 2P'"
+        ctx.fillStyle = "white"
+        ctx.fillText(`Score:${this.score}`, 10, 25)
     }
 
     updateEnemies(){
         for (let i = 0; i < this.enemies.length; i++) {
-            this.enemies[i].y += 3;
-            this.enemies[i].draw();
+            this.enemies[i].y += 3
+            this.enemies[i].draw()
           }
-      
           if (this.frames % 7 === 0) {
-         /*    let randomSize = Math.floor(Math.random() * (250 - 100) + 100); */
       
-            let randomX = Math.floor(Math.random() * (400 - 1) + 1);
+            let randomX = Math.floor(Math.random() * (400 - 1) + 1)
       
-            this.enemies.push(new Debris(randomX, 0, 4, 4, "red", this.ctx));
+            this.enemies.push(new Debris(randomX, 0, 4, 4, "red", this.ctx))
           }        
     }
 
@@ -68,14 +66,14 @@ class Game{
             return this.player.crashWith(enemy)
         })
         if (collision) {
-            ctx.font = "50px Roboto"
+            ctx.font =  "30px 'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
-            ctx.font = "25px Roboto"
+            ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
-            ctx.fillText(`Your final score is ${this.score}`, 90, 340)
+            ctx.fillText(`Your final score is ${this.score}`, 47, 340)
             this.stop()
-            music.pause()
+            themeMusic.pause()
             const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
             failSound.play()
         }

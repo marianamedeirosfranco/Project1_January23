@@ -4,7 +4,7 @@ body{
     padding: 0;
     text-align: center;
     font-family: 'Press Start 2P';
-    font-size: 16px;
+    font-size: 17px;
     background-image: url("../docs/assets/space-background.jpeg");
     color: white;
 }
@@ -46,10 +46,6 @@ body{
     margin-top: 50px;
 }
 
-#buttonDiv{
-    display: flex
-}
-
 #start-button{
     font-size: 20px;
     font-family: 'Press Start 2P';
@@ -69,11 +65,11 @@ body{
 
 #start-button:active {
     background-color: #062652;
-    box-shadow: 0 3px #666;
+    box-shadow: 0 4px #666;
     transform: translateY(4px);
 }
 
-#restart-button{
+/* #restart-button{
     font-size: 20px;
     font-family: 'Press Start 2P';
     width: 300px;
@@ -92,6 +88,6 @@ body{
 
 #restart-button:active {
     background-color: #b7410ecb;
-    box-shadow: 0 3px #666;
+    box-shadow: 0 4px #666;
     transform: translateY(4px);
-}
+} */
