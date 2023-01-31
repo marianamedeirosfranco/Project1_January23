@@ -99,14 +99,14 @@ newPosition() {
 
 class Boss{
   constructor(ctx){
-    this.x = 140
-    this.y = 3
-    this.w = 120
-    this.h = 80
+    this.x = 2
+    this.y = 0
+    this.w = 395
+    this.h = 140
     this.ctx = ctx
     const img2 = new Image()
     img2.addEventListener("load", () => {})
-    img2.src = "/docs/assets/white-cow-head-removebg.png"
+    img2.src = "/docs/assets/Cow-with-udders-removebg.png"
     this.img2 = img2;
 }
 
