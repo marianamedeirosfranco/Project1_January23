@@ -54,17 +54,17 @@ class Game{
     }
 
     drawScore(){
-        ctx.font = "12px 'Press Start 2P'"
+        ctx.font = "16px 'Press Start 2P'"
         ctx.fillStyle = "white"
         ctx.fillText(`Score:${this.score}`, 10, 25)
     }
 
     updateEnemies(){
         for (let i = 0; i < this.enemies.length; i++) {
-            this.enemies[i].y += 3
+            this.enemies[i].y += 2
             this.enemies[i].draw()
           }
-          if(this.frames % 10 === 0) {
+          if(this.frames % 15 === 0) {
             let randomX = Math.floor(Math.random() * (400 - 1) + 1)
             this.enemies.push(new Debris(randomX, 0, 4, 4, "white", this.ctx))
           }        
@@ -79,12 +79,17 @@ class Game{
             const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
             evilLaugh.play()
         }
+        /* this.bosschar.y = 0
+        let bossAppear = setInterval(() => {
+        if(bosschar.y === 165) clearInterval(bossAppear)
+        else this.bosschar.y++
+        }, 10000) */
     }
 
    bossShooting(){
         if(this.bosschar.length){
             for(let i = 0; i < this.bossbullets.length; i++){
-                    this.bossbullets[i].y += 9
+                    this.bossbullets[i].y += 8
                     this.bossbullets[i].x = this.bulletX + this.player.w / 2 - 2
                     this.bossbullets[i].draw()
             }
