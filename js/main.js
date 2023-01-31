@@ -16,7 +16,7 @@ const startButton = document.getElementById("start-button");
 startButton.onclick = function () {
     const game = new Game(ctx, canvas.width, canvas.height, player)
     game.start()
-    //themeMusic.play()
+    themeMusic.play()
     startButton.innerHTML = "RESTART!"
 }
 
