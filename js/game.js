@@ -11,9 +11,9 @@ class Game{
         this.frames = 0
         this.enemies = []
         this.bosschar = []
+        this.bossbullets = []
         this.score = 0
         this.backgroundImage = new Image()
-        /* this.img2 = new Image() */
     }
 
     start(){
@@ -26,8 +26,7 @@ class Game{
         this.drawBg()
         this.player.newPosition()
         this.player.draw()
-        this.updateEnemies()
-       /*  this.updateBoss() */
+        this.updateEnemies() 
         this.checkGameOver()
         this.drawScore()
         this.updateScore()
@@ -37,15 +36,16 @@ class Game{
         clearInterval(this.intervalId)
     }
 
-    
     clearbg() {
         this.ctx.clearRect(0, 0, this.width, this.height)
     }
+
     drawBg(){
         this.backgroundImage.src = "/docs/assets/space-background.jpeg"
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.width, this.height)
         this.updateBoss();
     }
+
     updateScore(){
         if(this.frames % 60 === 0) this.score++
     }
@@ -62,10 +62,8 @@ class Game{
             this.enemies[i].draw()
           }
           if(this.frames % 6 === 0) {
-      
             let randomX = Math.floor(Math.random() * (400 - 1) + 1)
-      
-            this.enemies.push(new Debris(randomX, 0, 4, 4, "red", this.ctx))
+            this.enemies.push(new Debris(randomX, 0, 4, 4, "color", this.ctx))
           }        
     }
 
@@ -73,11 +71,20 @@ class Game{
         if(this.bosschar.length) {
             this.bosschar[0].draw()
         }
-        if(this.frames % 180 === 0 && !this.bosschar.length) {
+        if(this.frames % 600 === 0 && !this.bosschar.length) {
             this.bosschar.push(new Boss(this.ctx))
+        }
     }
-    
-    }
+
+   /*  bossShooting(){
+        if(this.bosschar.length){
+            for(){
+                if(this.frames % 60 === 0){
+
+                }
+            }
+        }
+    } */
 
    checkGameOver(){
         const collision = this.enemies.some((enemy) => {

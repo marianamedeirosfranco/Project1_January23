@@ -10,7 +10,7 @@ class Spaceship{
         this.speedX = 0
         this.speedY = 0
         this.image = new Image()
-        this.image.src = "/docs/assets/alien-ship-removebg-corp.png"
+        this.image.src = "/docs/assets/alien-tight.png"
     }
 
     draw(){
