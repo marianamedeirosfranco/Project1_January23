@@ -46,7 +46,15 @@ class Spaceship{
         this.top() > Debris.bottom() ||
         this.right() < Debris.left() ||
         this.left() > Debris.right()
-      );
+      )
+    }
+
+    crashWithBoss(Boss) {
+      return !(
+        this.top() > Boss.bottom() ||
+        this.right() < Boss.left() ||
+        this.left() > Boss.right()
+      )
     }
 }
 
@@ -61,6 +69,7 @@ class Debris {
       this.speedX = 0;
       this.speedY = 0;
 }
+
 draw(){
     this.ctx.fillRect(this.x, this.y, this.w, this.h, this.color, this.ctx)
 }
@@ -73,14 +82,46 @@ newPosition() {
   top() {
     return this.y;
   }
+  
   bottom() {
     return this.y + this.h;
   }
+
   left() {
     return this.x;
   }
+
   right() {
     return this.x + this.w;
   }
 }
 
+class Boss{
+  constructor(ctx){
+    this.x = 165
+    this.y = 5
+    this.w = 70
+    this.h = 90
+    this.ctx = ctx
+    const img2 = new Image()
+    img2.addEventListener("load", () => {})
+    img2.src = "/docs/assets/8bit-gray-keys.png"
+    this.img2 = img2;
+}
+
+draw(){
+    ctx.drawImage(this.img2, this.x, this.y, this.w, this.h)
+}
+
+bottom() {
+  return this.y + this.h;
+}
+
+left() {
+  return this.x;
+}
+
+right() {
+  return this.x + this.w;
+}
+}

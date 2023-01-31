@@ -13,8 +13,6 @@ const player = new Spaceship(177, 550, 20, 40, ctx)
 // Grab the button & Start game
 const startButton = document.getElementById("start-button");
 
-startButton.innerHTML = "Start Game!";
-
 startButton.onclick = function () {
     const game = new Game(ctx, canvas.width, canvas.height, player)
     game.start()
@@ -27,7 +25,7 @@ document.addEventListener("keydown", (e) => {
     switch(e.code){ 
         case "ArrowUp":
             if(player.y > 15){
-            player.speedY = -4
+            player.speedY = -3.5
              }else{
                 player.y = 15
                 player.speedY = 0
@@ -35,7 +33,7 @@ document.addEventListener("keydown", (e) => {
               break
         case "ArrowDown":
             if(player.y < 550){
-            player.speedY = 4
+            player.speedY = 3.5
             }else{
                 player.y = 550
                 player.speedY = 0
@@ -43,14 +41,14 @@ document.addEventListener("keydown", (e) => {
             break
         case "ArrowLeft":
             if (player.x > 0){
-            player.speedX = -4
+            player.speedX = -3.5
             } else{
                 player.x = 0
                 player.speedX = 0
             }break
         case "ArrowRight":
             if (player.x  <  380){
-                player.speedX = 4
+                player.speedX = 3.5
                 } else{
                     player.x = 380
                     player.speedX = 0
