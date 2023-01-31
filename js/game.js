@@ -74,7 +74,7 @@ class Game{
         if(this.bosschar.length) {
             this.bosschar[0].draw()
         }
-        if(this.frames % 300 === 0 && !this.bosschar.length) {
+        if(this.frames % 600 === 0 && !this.bosschar.length) {
             this.bosschar.push(new Boss(this.ctx))
             const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
             evilLaugh.play()

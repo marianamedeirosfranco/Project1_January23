@@ -99,10 +99,10 @@ newPosition() {
 
 class Boss{
   constructor(ctx){
-    this.x = 2
+    this.x = 0
     this.y = 0
-    this.w = 395
-    this.h = 140
+    this.w = 400
+    this.h = 165
     this.ctx = ctx
     const img2 = new Image()
     img2.addEventListener("load", () => {})
