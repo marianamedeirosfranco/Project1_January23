@@ -14,6 +14,8 @@ class Game{
         this.bossbullets = []
         this.score = 0
         this.backgroundImage = new Image()
+
+        this.bulletX;
     }
 
     start(){
@@ -62,7 +64,7 @@ class Game{
             this.enemies[i].y += 3
             this.enemies[i].draw()
           }
-          if(this.frames % 6 === 0) {
+          if(this.frames % 10 === 0) {
             let randomX = Math.floor(Math.random() * (400 - 1) + 1)
             this.enemies.push(new Debris(randomX, 0, 4, 4, "white", this.ctx))
           }        
@@ -83,10 +85,12 @@ class Game{
         if(this.bosschar.length){
             for(let i = 0; i < this.bossbullets.length; i++){
                     this.bossbullets[i].y += 9
+                    this.bossbullets[i].x = this.bulletX + this.player.w / 2 - 2
                     this.bossbullets[i].draw()
             }
                 if(this.frames % 60 === 0){
                     this.bossbullets.push(new Debris(198, 75, 4, 25, 'red', this.ctx))
+                    this.bulletX = this.player.x
                     const laserSound = new Audio("../docs/assets/laser-sound.mp3")
                     laserSound.play()
                 }
