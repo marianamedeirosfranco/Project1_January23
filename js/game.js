@@ -11,6 +11,7 @@ class Game{
         this.frames = 0
         this.enemies = []
         this.bosschar = []
+        this.bossbullets = []
         this.score = 0
         this.backgroundImage = new Image()
         /* this.img2 = new Image() */
@@ -31,6 +32,7 @@ class Game{
         this.checkGameOver()
         this.drawScore()
         this.updateScore()
+        this.bossShooting()
     }
 
     stop(){
@@ -76,7 +78,21 @@ class Game{
         if(this.frames % 180 === 0 && !this.bosschar.length) {
             this.bosschar.push(new Boss(this.ctx))
     }
-    
+    }
+
+    bossShooting(){
+        if(this.bosschar.length){
+            for (let i=0; this.bossbullets.length; i++){
+            this.bossbullets[i].x += 3
+            this.bossbullets[i].draw()
+            }
+        }
+        if(this.frames % 60 === 0) {
+      
+           /*  let randomX = Math.floor(Math.random() * (400 - 1) + 1) */
+      
+            this.bossbullets.push(new Debris(200, 20, 4, 4, "color", this.ctx))
+          }        
     }
 
    checkGameOver(){
