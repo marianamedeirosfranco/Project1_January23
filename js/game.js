@@ -30,6 +30,7 @@ class Game{
         this.checkGameOver()
         this.drawScore()
         this.updateScore()
+        this.bossShooting()
     }
 
     stop(){
@@ -63,7 +64,7 @@ class Game{
           }
           if(this.frames % 6 === 0) {
             let randomX = Math.floor(Math.random() * (400 - 1) + 1)
-            this.enemies.push(new Debris(randomX, 0, 4, 4, "color", this.ctx))
+            this.enemies.push(new Debris(randomX, 0, 4, 4, "white", this.ctx))
           }        
     }
 
@@ -71,26 +72,48 @@ class Game{
         if(this.bosschar.length) {
             this.bosschar[0].draw()
         }
-        if(this.frames % 600 === 0 && !this.bosschar.length) {
+        if(this.frames % 300 === 0 && !this.bosschar.length) {
             this.bosschar.push(new Boss(this.ctx))
+            const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
+            evilLaugh.play()
         }
     }
 
-   /*  bossShooting(){
+   bossShooting(){
         if(this.bosschar.length){
-            for(){
-                if(this.frames % 60 === 0){
-
-                }
+            for(let i = 0; i < this.bossbullets.length; i++){
+                    this.bossbullets[i].y += 9
+                    this.bossbullets[i].draw()
             }
+                if(this.frames % 60 === 0){
+                    this.bossbullets.push(new Debris(198, 75, 4, 25, 'red', this.ctx))
+                    const laserSound = new Audio("../docs/assets/laser-sound.mp3")
+                    laserSound.play()
+                }
         }
-    } */
+    }
 
    checkGameOver(){
         const collision = this.enemies.some((enemy) => {
             return this.player.crashWith(enemy)
         })
         if (collision) {
+            ctx.font =  "30px 'Press Start 2P'"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`YOU'RE TRASH`, 20, 250)
+            ctx.font = "15px  'Press Start 2P'"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            this.stop()
+            themeMusic.pause()
+            const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+            failSound.play()
+        }
+
+        const bulletCollision = this.bossbullets.some((bullet) => {
+            return this.player.crashWith(bullet)
+        })
+        if (bulletCollision) {
             ctx.font =  "30px 'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`YOU'RE TRASH`, 20, 250)

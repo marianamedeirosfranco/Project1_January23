@@ -71,6 +71,7 @@ class Debris {
 }
 
 draw(){
+  this.ctx.fillStyle = this.color
     this.ctx.fillRect(this.x, this.y, this.w, this.h, this.color, this.ctx)
 }
 
@@ -98,14 +99,14 @@ newPosition() {
 
 class Boss{
   constructor(ctx){
-    this.x = 165
-    this.y = 5
-    this.w = 70
-    this.h = 90
+    this.x = 140
+    this.y = 3
+    this.w = 120
+    this.h = 80
     this.ctx = ctx
     const img2 = new Image()
     img2.addEventListener("load", () => {})
-    img2.src = "/docs/assets/8bit-gray-keys.png"
+    img2.src = "/docs/assets/white-cow-head-removebg.png"
     this.img2 = img2;
 }
 
