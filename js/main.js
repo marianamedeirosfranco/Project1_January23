@@ -4,23 +4,32 @@ const canvas = document.getElementById("canvas")
 
 const ctx = canvas.getContext("2d")
 
-//Creat soundtrack
+//Creat Audios
 const themeMusic = new Audio("../docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
 themeMusic.volume = 0.3
 
+const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
+
+const laserSound = new Audio("../docs/assets/laser-sound.mp3")
+laserSound.volume = 0.5
+
+const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+
 //Create player 
-const player = new Spaceship(177, 550, 20, 40, ctx)
+const player = new Spaceship(190, 550, 20, 40, ctx)
 
 // Grab the button & Start game
 const startButton = document.getElementById("start-button");
 
-startButton.onclick = function () {
+startButton.onclick = function(){
+    failSound.pause()
+    failSound.currentTime = 0
     themeMusic.currentTime = 0
     const game = new Game(ctx, canvas.width, canvas.height, player)
     game.start()
     themeMusic.play()
     startButton.innerHTML = "RESTART!"
-    player.x = 177
+    player.x = 190
     player.y = 550
 }
 

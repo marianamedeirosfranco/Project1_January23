@@ -39,7 +39,7 @@ class Game{
         clearInterval(this.intervalId)
     }
 
-    clearbg() {
+    clearbg(){
         this.ctx.clearRect(0, 0, this.width, this.height)
     }
 
@@ -66,23 +66,23 @@ class Game{
     }
 
     updateEnemies(){
-        for (let i = 0; i < this.enemies.length; i++) {
+        for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].y += 3
             this.enemies[i].draw()
-          }
-          if(this.frames % 15 === 0) {
+        }
+        if(this.frames % 15 === 0){
             let randomX = Math.floor(Math.random() * (400 - 1) + 1)
             this.enemies.push(new Debris(randomX, 0, 4, 4, "white", this.ctx))
-          }        
+        }        
     }
 
     updateBoss(){
-        if(this.bosschar.length) {
+        if(this.bosschar.length){
             this.bosschar[0].draw()
         }
-        if(this.frames % 500 === 0 && !this.bosschar.length) {
+        if(this.frames % 500 === 0 && !this.bosschar.length){
             this.bosschar.push(new Boss(this.ctx))
-            const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
+            /* const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3") */
             evilLaugh.play()
         }
         for(let i = 0; i < this.bosschar.length; i++){
@@ -101,8 +101,6 @@ class Game{
             if(this.frames % 120 === 0){
                     let shootPlayer = this.player.x + this.player.w / 2 - 2
                     this.bossbullets.push(new Debris(shootPlayer, 75, 4, 25, 'red', this.ctx))
-                    const laserSound = new Audio("../docs/assets/laser-sound.mp3")
-                    laserSound.volume = 0.5
                     laserSound.play()
             }   
         }     
@@ -112,7 +110,8 @@ class Game{
         const collision = this.enemies.some((enemy) => {
             return this.player.crashWith(enemy)
         })
-        if (collision) {
+        
+        if(collision){
             ctx.font =  "30px 'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
@@ -124,14 +123,18 @@ class Game{
             ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
-            const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+            evilLaugh.pause()
+            evilLaugh.currentTime = 0
+            laserSound.pause()
+            laserSound.currentTime = 0
             failSound.play()
         }
 
         const bulletCollision = this.bossbullets.some((bullet) => {
             return this.player.crashWith(bullet)
         })
-        if (bulletCollision) {
+
+        if(bulletCollision){
             ctx.font =  "30px 'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
@@ -143,14 +146,18 @@ class Game{
             ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
-            const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+            evilLaugh.pause()
+            evilLaugh.currentTime = 0
+            laserSound.pause()
+            laserSound.currentTime = 0
             failSound.play()
         }
 
         const bossCollision = this.bosschar.some((boss) => {
             return this.player.crashWithBoss(boss)
         })
-        if (bossCollision) {
+
+        if(bossCollision){
             ctx.font =  "30px 'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
@@ -162,7 +169,10 @@ class Game{
             ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
-            const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+            evilLaugh.pause()
+            evilLaugh.currentTime = 0
+            laserSound.pause()
+            laserSound.currentTime = 0
             failSound.play()
         }
     }
