@@ -34,7 +34,7 @@ document.addEventListener("keydown", (e) => {
                 player.y = 15
                 player.speedY = 0
              }
-              break
+            break
         case "ArrowDown":
             if(player.y < 550){
             player.speedY = 3.5
@@ -46,18 +46,19 @@ document.addEventListener("keydown", (e) => {
         case "ArrowLeft":
             if (player.x > 0){
             player.speedX = -3.5
-            } else{
+            }else{
                 player.x = 0
                 player.speedX = 0
-            }break
+            }
+            break
         case "ArrowRight":
             if (player.x  <  380){
                 player.speedX = 3.5
-                } else{
+                }else{
                     player.x = 380
                     player.speedX = 0
-            break 
-                }
+            }
+            break
     }
 })
 

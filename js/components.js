@@ -18,10 +18,13 @@ class Spaceship{
   }
 
   newPosition(){
-
-    //If statments impead canvass crossing glitch
-    this.x += this.speedX
-    this.y += this.speedY
+    if(this.y >= 0 &&
+      this.y + this.h <= 600 &&
+      this.x >= 0 &&
+      this.x + this.w <= 400){
+        this.x += this.speedX
+        this.y += this.speedY
+    }
   }
 
   top(){
