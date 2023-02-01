@@ -100,7 +100,8 @@ class Game{
                     this.bossbullets[i].draw()
             }
                 if(this.frames % 60 === 0){
-                    this.bossbullets.push(new Debris(this.player.x, 75, 4, 25, 'red', this.ctx))
+                    let shootPlayer = this.player.x + this.player.w / 2 - 2
+                    this.bossbullets.push(new Debris(shootPlayer, 75, 4, 25, 'red', this.ctx))
                     const laserSound = new Audio("../docs/assets/laser-sound.mp3")
                     laserSound.volume = 0.5
                     laserSound.play()
