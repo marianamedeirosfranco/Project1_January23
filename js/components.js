@@ -103,13 +103,13 @@ right() {
 class Boss{
 constructor(ctx){
   this.x = 0
-  this.y = -165
+  this.y = -90
   this.w = 400
-  this.h = 165
+  this.h = 90
   this.ctx = ctx
   const img2 = new Image()
   img2.addEventListener("load", () => {})
-  img2.src = "/docs/assets/Cow-with-udders-removebg.png"
+  img2.src = "/docs/assets/COW-udders1-removebg-preview.png"
   this.img2 = img2;
 }
 
