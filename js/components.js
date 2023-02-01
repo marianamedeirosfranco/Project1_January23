@@ -71,61 +71,61 @@ class Debris {
     this.ctx=ctx
     this.speedX = 0;
     this.speedY = 0;
-}
+  }
 
-draw(){
-this.ctx.fillStyle = this.color
-  this.ctx.fillRect(this.x, this.y, this.w, this.h, this.color, this.ctx)
-}
+  draw(){
+  this.ctx.fillStyle = this.color
+    this.ctx.fillRect(this.x, this.y, this.w, this.h, this.color, this.ctx)
+  }
 
-newPosition() {
-  this.x += this.speedX;
-  this.y += this.speedY;
-}
+  newPosition() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+  }
 
-top() {
-  return this.y;
-}
+  top() {
+    return this.y;
+  }
 
-bottom() {
-  return this.y + this.h;
-}
+  bottom() {
+    return this.y + this.h;
+  }
 
-left() {
-  return this.x;
-}
+  left() {
+    return this.x;
+  }
 
-right() {
-  return this.x + this.w;
-}
+  right() {
+    return this.x + this.w;
+  }
 }
 
 class Boss{
-constructor(ctx){
-  this.x = 0
-  this.y = -90
-  this.w = 400
-  this.h = 90
-  this.ctx = ctx
-  const img2 = new Image()
-  img2.addEventListener("load", () => {})
-  img2.src = "/docs/assets/COW-udders1-removebg-preview.png"
-  this.img2 = img2;
-}
+  constructor(ctx){
+    this.x = 0
+    this.y = -90
+    this.w = 400
+    this.h = 90
+    this.ctx = ctx
+    const img2 = new Image()
+    img2.addEventListener("load", () => {})
+    img2.src = "/docs/assets/COW-udders1-removebg-preview.png"
+    this.img2 = img2;
+  }
 
-draw(){
-  ctx.drawImage(this.img2, this.x, this.y, this.w, this.h)
-}
+  draw(){
+    ctx.drawImage(this.img2, this.x, this.y, this.w, this.h)
+  }
 
-bottom() {
-return this.y + this.h;
-}
+  bottom() {
+  return this.y + this.h;
+  }
 
-left() {
-return this.x;
-}
+  left() {
+  return this.x;
+  }
 
-right() {
-return this.x + this.w;
-}
+  right() {
+  return this.x + this.w;
+  }
 }
