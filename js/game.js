@@ -96,7 +96,7 @@ class Game{
    bossShooting(){
         if(this.bosschar.length){
             for(let i = 0; i < this.bossbullets.length; i++){
-                    this.bossbullets[i].y += 8
+                    this.bossbullets[i].y += 6
                     this.bossbullets[i].draw()
             }
                 if(this.frames % 60 === 0){
