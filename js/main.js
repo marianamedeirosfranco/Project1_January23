@@ -6,14 +6,16 @@ const ctx = canvas.getContext("2d")
 
 //Creat soundtrack
 const themeMusic = new Audio("../docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
+themeMusic.volume = 0.4
 
 //Create player 
-const player = new Spaceship(177, 550, 20, 40, ctx) 
+const player = new Spaceship(177, 550, 20, 40, ctx)
 
 // Grab the button & Start game
 const startButton = document.getElementById("start-button");
 
 startButton.onclick = function () {
+    themeMusic.currentTime = 0
     const game = new Game(ctx, canvas.width, canvas.height, player)
     game.start()
     themeMusic.play()

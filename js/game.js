@@ -13,9 +13,8 @@ class Game{
         this.bosschar = []
         this.bossbullets = []
         this.score = 0
-        this.backgroundImage = new Image()
-
-        this.bulletX;
+        this.highscore = 0
+        this.backgroundImage = new Image() 
     }
 
     start(){
@@ -32,6 +31,7 @@ class Game{
         this.checkGameOver()
         this.drawScore()
         this.updateScore()
+        this.drawHighScore()
         this.bossShooting()
     }
 
@@ -59,6 +59,12 @@ class Game{
         ctx.fillText(`Score:${this.score}`, 10, 25)
     }
 
+    drawHighScore(){
+        if(this.score >= this.highscore) this.highscore = this.score
+        /* let highScore = this.highscore
+        window.localStorage.setItem(highScore) */
+    }
+
     updateEnemies(){
         for (let i = 0; i < this.enemies.length; i++) {
             this.enemies[i].y += 2
@@ -74,29 +80,29 @@ class Game{
         if(this.bosschar.length) {
             this.bosschar[0].draw()
         }
-        if(this.frames % 600 === 0 && !this.bosschar.length) {
+        if(this.frames % 500 === 0 && !this.bosschar.length) {
             this.bosschar.push(new Boss(this.ctx))
             const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
             evilLaugh.play()
         }
-        /* this.bosschar.y = 0
-        let bossAppear = setInterval(() => {
-        if(bosschar.y === 165) clearInterval(bossAppear)
-        else this.bosschar.y++
-        }, 10000) */
+       /*  if(this.bosschar.length){
+            this.bosschar[0].y = -165
+            while(this.bosschar[0].y <= 0){
+               if(this.frames % 20 === 0) this.bosschar[0].y++
+            }
+        }*/
     }
 
    bossShooting(){
         if(this.bosschar.length){
             for(let i = 0; i < this.bossbullets.length; i++){
                     this.bossbullets[i].y += 8
-                    this.bossbullets[i].x = this.bulletX + this.player.w / 2 - 2
                     this.bossbullets[i].draw()
             }
                 if(this.frames % 60 === 0){
-                    this.bossbullets.push(new Debris(198, 75, 4, 25, 'red', this.ctx))
-                    this.bulletX = this.player.x
+                    this.bossbullets.push(new Debris(this.player.x, 75, 4, 25, 'red', this.ctx))
                     const laserSound = new Audio("../docs/assets/laser-sound.mp3")
+                    laserSound.volume = 0.5
                     laserSound.play()
                 }
         }
@@ -113,6 +119,9 @@ class Game{
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            ctx.font = "15px  'Press Start 2P'"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
             const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
@@ -129,6 +138,9 @@ class Game{
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            ctx.font = "15px  'Press Start 2P'"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
             const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
@@ -145,6 +157,9 @@ class Game{
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
             ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            ctx.font = "15px  'Press Start 2P'"
+            ctx.fillStyle = "yellow"
+            ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
             const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
