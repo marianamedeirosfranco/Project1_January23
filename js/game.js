@@ -86,7 +86,7 @@ class Game{
             evilLaugh.play()
         }
         for(let i = 0; i < this.bosschar.length; i++){
-            if(this.bosschar[i].y <= 0){
+            if(this.bosschar[i].y <= -5){
             this.bosschar[i].y ++
             }
         }
