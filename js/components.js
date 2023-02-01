@@ -100,7 +100,7 @@ right() {
 class Boss{
 constructor(ctx){
   this.x = 0
-  this.y = 0
+  this.y = -165
   this.w = 400
   this.h = 165
   this.ctx = ctx

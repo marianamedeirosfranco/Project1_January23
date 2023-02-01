@@ -67,7 +67,7 @@ class Game{
 
     updateEnemies(){
         for (let i = 0; i < this.enemies.length; i++) {
-            this.enemies[i].y += 2
+            this.enemies[i].y += 3
             this.enemies[i].draw()
           }
           if(this.frames % 15 === 0) {
@@ -85,28 +85,27 @@ class Game{
             const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
             evilLaugh.play()
         }
-       /*  if(this.bosschar.length){
-            this.bosschar[0].y = -165
-            while(this.bosschar[0].y <= 0){
-               if(this.frames % 20 === 0) this.bosschar[0].y++
+        for(let i = 0; i < this.bosschar.length; i++){
+            if(this.bosschar[i].y <= 0){
+            this.bosschar[i].y ++
             }
-        }*/
+        }
     }
 
    bossShooting(){
         if(this.bosschar.length){
             for(let i = 0; i < this.bossbullets.length; i++){
-                    this.bossbullets[i].y += 6
+                    this.bossbullets[i].y += 11
                     this.bossbullets[i].draw()
             }
-                if(this.frames % 60 === 0){
+            if(this.frames % 120 === 0){
                     let shootPlayer = this.player.x + this.player.w / 2 - 2
                     this.bossbullets.push(new Debris(shootPlayer, 75, 4, 25, 'red', this.ctx))
                     const laserSound = new Audio("../docs/assets/laser-sound.mp3")
                     laserSound.volume = 0.5
                     laserSound.play()
-                }
-        }
+            }   
+        }     
     }
 
    checkGameOver(){
