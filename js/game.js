@@ -60,11 +60,10 @@ class Game{
     }
 
     drawHighScore(){
-        if(this.score >= this.highscore) this.highscore = this.score
-        /* let highScore = this.highscore
-        window.localStorage.setItem(highScore) */
+        let highscore = localStorage.setItem(this.highscore);
+        if(this.score >= this.highscore){
+        highscore = this.score}
     }
-
     updateEnemies(){
         for (let i = 0; i < this.enemies.length; i++) {
             this.enemies[i].y += 2
@@ -122,7 +121,7 @@ class Game{
             ctx.fillText(`Your final score is ${this.score}`, 47, 340)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
-            ctx.fillText(`Highscore:${this.highscore}`, 115, 380)
+            ctx.fillText(`Highscore:${highscore}`, 115, 380)
             this.stop()
             themeMusic.pause()
             const failSound = new Audio("../docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
