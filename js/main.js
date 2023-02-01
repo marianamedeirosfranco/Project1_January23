@@ -20,6 +20,7 @@ startButton.onclick = function () {
     game.start()
     themeMusic.play()
     startButton.innerHTML = "RESTART!"
+    player.x = 
 }
 
 //Key Funcionalities 
