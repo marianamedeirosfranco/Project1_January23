@@ -75,7 +75,6 @@ class Game{
         }
         if(this.frames % 500 === 0 && !this.bosschar.length){
             this.bosschar.push(new Boss(this.ctx))
-            /* const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3") */
             evilLaugh.play()
         }
         for(let i = 0; i < this.bosschar.length; i++){
