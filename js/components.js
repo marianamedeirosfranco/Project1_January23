@@ -18,10 +18,10 @@ class Spaceship{
   }
 
   newPosition(){
-    if(this.y >= 0 &&
-      this.y + this.h <= 600 &&
-      this.x >= 0 &&
-      this.x + this.w <= 400){
+    if(this.y + this.speedY >= 0 &&
+      this.y + this.h + this.speedY <= 600 &&
+      this.x + this.speedX >= 0 &&
+      this.x + this.w +this.speedX <= 400){
         this.x += this.speedX
         this.y += this.speedY
     }

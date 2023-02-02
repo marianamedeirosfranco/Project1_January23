@@ -75,7 +75,6 @@ class Game{
         }
         if(this.frames % 500 === 0 && !this.bosschar.length){
             this.bosschar.push(new Boss(this.ctx))
-            /* const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3") */
             evilLaugh.play()
         }
         for(let i = 0; i < this.bosschar.length; i++){
@@ -109,14 +108,14 @@ class Game{
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
-            ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            ctx.fillText(`Your final score is ${this.score}`, 40, 340)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
             this.showHighScore === undefined ? this.showHighScore = this.score :  this.showHighScore = localStorage.getItem("highScore")
             if(this.score > this.showHighScore){
                this.showHighScore = localStorage.setItem("highScore", this.score)
             }
-            ctx.fillText(`Highscore:${localStorage.getItem("highScore")}`, 115, 380)
+            ctx.fillText(`Highscore:${localStorage.getItem("highScore")}`, 110, 380)
             this.stop()
             themeMusic.pause()
             evilLaugh.pause()
@@ -136,14 +135,14 @@ class Game{
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
-            ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            ctx.fillText(`Your final score is ${this.score}`, 40, 340)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
             this.showHighScore === undefined ? this.showHighScore = this.score :  this.showHighScore = localStorage.getItem("highScore")
             if(this.score > this.showHighScore){
                this.showHighScore = localStorage.setItem("highScore", this.score)
             }
-            ctx.fillText(`Highscore:${localStorage.getItem("highScore")}`, 115, 380)
+            ctx.fillText(`Highscore:${localStorage.getItem("highScore")}`, 110, 380)
             this.stop()
             themeMusic.pause()
             evilLaugh.pause()
@@ -163,14 +162,14 @@ class Game{
             ctx.fillText(`YOU'RE TRASH`, 20, 250)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
-            ctx.fillText(`Your final score is ${this.score}`, 47, 340)
+            ctx.fillText(`Your final score is ${this.score}`, 40, 340)
             ctx.font = "15px  'Press Start 2P'"
             ctx.fillStyle = "yellow"
             this.showHighScore === undefined ? this.showHighScore = this.score :  this.showHighScore = localStorage.getItem("highScore")
             if(this.score > this.showHighScore){
                this.showHighScore = localStorage.setItem("highScore", this.score)
             }
-            ctx.fillText(`Highscore:${localStorage.getItem("highScore")}`, 115, 380)
+            ctx.fillText(`Highscore:${localStorage.getItem("highScore")}`, 110, 380)
             this.stop()
             themeMusic.pause()
             evilLaugh.pause()
