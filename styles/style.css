@@ -69,25 +69,15 @@ body{
     transform: translateY(4px);
 }
 
-/* #restart-button{
-    font-size: 20px;
-    font-family: 'Press Start 2P';
-    width: 300px;
-    height: 80px;
-    background-color: #b7410e;
-    color: white;
-    border-radius: 20px;
-    border: 8px ridge #b7410e;
-    box-shadow: 0 8px #999;
+@keyframes canvasappears {
+    0%   {width: 0px; height: 0px;}
+    /* 12.5%{width: 25px; height: 75px;}
+    25%  {width: 50px; height: 150px;}
+    50%  {width: 200px; height: 300px;}
+    75%{width: 300px; height: 450px;} */
+    100% {width: 400px; height: 600px;}
 }
 
-#restart-button:hover{
-    background-color: #b7410ecb;
-    border: 8px ridge #b7410ecb;
-}
-
-#restart-button:active {
-    background-color: #b7410ecb;
-    box-shadow: 0 4px #666;
-    transform: translateY(4px);
-} */
+#canvas {
+    animation: canvasappears 4s;
+  }
