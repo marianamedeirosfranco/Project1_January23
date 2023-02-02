@@ -6,7 +6,7 @@ document.getElementById("canvas").style.visibility = "hidden"
 const ctx = canvas.getContext("2d")
 
 //Creat Audios
-const themeMusic = new Audio("../docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
+const themeMusic = new Audio("./docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
 themeMusic.volume = 0.2
 
 const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
