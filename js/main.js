@@ -6,15 +6,15 @@ document.getElementById("canvas").style.visibility = "hidden"
 const ctx = canvas.getContext("2d")
 
 //Creat Audios
-const themeMusic = new Audio("/docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
+const themeMusic = new Audio("./docs/assets/Y2Mate.is - STAR WARS THEME - shitty flute version-VeFzYPKbz1g-144p-1655124518911.mp4")
 themeMusic.volume = 0.2
 
-const evilLaugh = new Audio("docs/assets/evil-laugh.mp3")
+const evilLaugh = new Audio("../docs/assets/evil-laugh.mp3")
 
 const laserSound = new Audio("docs/assets/laser-sound.mp3")
 laserSound.volume = 0.8
 
-const failSound = new Audio("docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
+const failSound = new Audio("/docs/assets/Y2Mate.is - Sad Trombone Wah Wah Wah Fail Sound Effect-LukyMYp2noo-144p-1654480449831.mp4")
 
 //Create player 
 const player = new Spaceship(190, 550, 20, 40, ctx)
