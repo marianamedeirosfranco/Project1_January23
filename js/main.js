@@ -1,6 +1,7 @@
 /** @type {HTMLCanvasElement} */
 
 const canvas = document.getElementById("canvas")
+document.getElementById("canvas").style.visibility = "hidden"
 
 const ctx = canvas.getContext("2d")
 
@@ -22,6 +23,7 @@ const player = new Spaceship(190, 550, 20, 40, ctx)
 const startButton = document.getElementById("start-button");
 
 startButton.onclick = function(){
+    document.getElementById("canvas").style.visibility = "visible"
     failSound.pause()
     failSound.currentTime = 0
     themeMusic.currentTime = 0
