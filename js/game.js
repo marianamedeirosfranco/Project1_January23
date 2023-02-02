@@ -43,7 +43,7 @@ class Game{
     }
 
     drawBg(){
-        this.backgroundImage.src = "/docs/assets/space-background.jpeg"
+        this.backgroundImage.src = "docs/assets/space-background.jpeg"
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.width, this.height)
         this.updateBoss();
     }

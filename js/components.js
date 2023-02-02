@@ -10,7 +10,7 @@ class Spaceship{
       this.speedX = 0
       this.speedY = 0
       this.image = new Image()
-      this.image.src = "/docs/assets/alien-tight.png"
+      this.image.src = "docs/assets/alien-tight.png"
   }
 
   draw(){
@@ -109,7 +109,7 @@ class Boss{
     this.ctx = ctx
     const img2 = new Image()
     img2.addEventListener("load", () => {})
-    img2.src = "/docs/assets/COW-udders1-removebg-preview.png"
+    img2.src = "docs/assets/COW-udders1-removebg-preview.png"
     this.img2 = img2;
   }
 
